@@ -1,0 +1,29 @@
+{
+  "name": "audioluv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/playscript-js/al.git"
+  },
+  "author": "ivy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/playscript-js/al/issues"
+  },
+  "homepage": "https://github.com/playscript-js/al#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.21",
+    "video-url-link": "^0.1.5",
+    "youtube-search-api": "^1.0.9",
+    "ytdl-core": "^4.5.0"
+  }
+}
