@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/playscript-js/al.git"
+    "url": "git+https://github.com/playscript-js/max.git"
   },
   "author": "ivy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/playscript-js/al/issues"
+    "url": "https://github.com/playscript-js/max/issues"
   },
-  "homepage": "https://github.com/playscript-js/al#readme",
+  "homepage": "https://github.com/playscript-js/max#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -24,6 +24,7 @@
     "lodash": "^4.17.21",
     "video-url-link": "^0.1.5",
     "youtube-search-api": "^1.0.9",
+    "youtube-sr": "^4.0.3",
     "ytdl-core": "^4.5.0"
   }
 }
