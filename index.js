@@ -1,6 +1,6 @@
 app=require("express")();
 _=require("lodash");
-yt=require("youtube-search-api");
+yt=require("youtube-sr").default;
 url=require("ytdl-core");
 fs=require("fs");
 cors=require("cors");
@@ -10,8 +10,8 @@ app.use(cors())
 
 
 app.get("/search/:query",(req,res)=>{
-yt.GetListByKeyword(_.replace(req.params.query,"+"," "),false)
-.then(ret=>{res.json(ret.items)})
+yt.search(_.replace(req.params.query,"+"," "),{limit:0})
+.then(ret=>{res.json(ret)})
 .catch(e=>{res.send(e)})
 })
 
