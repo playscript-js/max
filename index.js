@@ -20,6 +20,7 @@ res.json(ls)}})
 })
 
 app.get("/video/:query",(req,res)=>{
+res.header("Access-Control-Allow-Origin", "*");
 url.getInfo("https://www.youtube.com/watch?v="+
 req.params.query).then(e=>{
  var u =e.formats[e.formats.length-1].url
