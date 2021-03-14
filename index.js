@@ -7,7 +7,7 @@ request=require("request")
 
 app.use(cors())
 opt={key: "AIzaSyCg4WbYR_fegTYMmS5jqijjRN8xc-Ce1mo"}
-
+lifetime=0
 
 app.get("/search/:query",(req,res)=>{
 yt(_.replace(req.params.query,"+"," "),opt,(err,ret)=>{
@@ -19,15 +19,34 @@ ls.push(ret[i])}}
 res.json(ls)}})
 })
 
-app.get("/video/:query",(req,res)=>{
-res.header("Access-Control-Allow-Origin", "*");
+app.get("/video/:query/:type",(req,res)=>{
 url.getInfo("https://www.youtube.com/watch?v="+
 req.params.query).then(e=>{
+
+
+if(req.params.type=="listen"||req.params.type==undefined){
  var u =e.formats[e.formats.length-1].url
-console.log(e.formats[e.formats.length-1])
- req.pipe(request(u)).pipe(res);
+ req.pipe(request(u)).pipe(res);}
+
+if(req.params.type=="listenhigh"){
+ var u =e.formats[e.formats.length-3].url
+ req.pipe(request(u)).pipe(res);}
+
+
 })
  })
+
+setInterval(()=>{lifetime+=1000},1000)
+setInterval(()=>{request("https://audioluv.web.app",(e,h,d)=>
+{})},10000)
+
+setInterval(()=>{
+request("https://audio-love.herokuapp.com/search/jcole+apparently"
+,(e,r,b)=>{
+if(e)console.log(e);
+else console.log("stay awake",lifetime)})},1200000)
+
+
 
 app.listen(process.env.PORT||3000)
 console.log("ready")
